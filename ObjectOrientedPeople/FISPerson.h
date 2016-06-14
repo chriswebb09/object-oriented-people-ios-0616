@@ -10,10 +10,10 @@
 
 @interface FISPerson : NSObject
 
-@property (nonatomic, readonly) NSString *name;
+@property (strong, nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSUInteger ageInYears;
 @property (nonatomic, readonly) NSUInteger heightInInches;
-@property (nonatomic, readonly) NSMutableArray *skills;
+@property (strong, nonatomic, readonly) NSMutableArray *skills;
 
 
 -(instancetype)init;
@@ -23,6 +23,7 @@
 -(instancetype)initWithName:(NSString *)name ageInYears:(NSUInteger)ageInYears;
 
 -(instancetype)initWithName:(NSString *)name ageInYears:(NSUInteger)ageInYears heightInInches:(NSUInteger)heightInInches;
+
 
 -(NSString *)celebrateBirthday;
 

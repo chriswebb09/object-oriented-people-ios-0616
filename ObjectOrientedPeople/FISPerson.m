@@ -43,13 +43,9 @@
 }
 
 -(NSString *)celebrateBirthday {
-    [self ordinalForInteger:self.ageInYears += 1];
-    NSString *happyBirthday = @"HAPPY ";
-    NSString *formattedHappyBirthday = [happyBirthday stringByAppendingFormat:@"%li", _ageInYears];
-    formattedHappyBirthday = [formattedHappyBirthday stringByAppendingFormat:@"th birthday, %@!!!", self.name
-            ];
-    NSLog(@"%@", formattedHappyBirthday.uppercaseString);
-    return formattedHappyBirthday.uppercaseString;
+    _ageInYears += 1;
+    NSString *happyBirthday = [NSString stringWithFormat:@"happy %li%@ BIRTHDAY, %@!!!", _ageInYears,[self ordinalForInteger:self.ageInYears], self.name];
+    return happyBirthday.uppercaseString;
 }
 
 - (NSString *)ordinalForInteger:(NSUInteger)integer {
